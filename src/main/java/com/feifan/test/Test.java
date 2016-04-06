@@ -36,8 +36,7 @@ public class Test {
             UserMapper userMapper = session.getMapper(UserMapper.class);
 //            User user = (User) session.selectOne("com.feifan.mybatis.models.UserMapper.selectUserByID", 1);
             User user = userMapper.selectUserByID(1);
-            System.out.println(user.getUserAddress());
-            System.out.println(user.getUserName());
+            System.out.println(user.getUsername());
         } finally {
             session.close();
         }
