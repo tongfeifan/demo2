@@ -1,4 +1,4 @@
-package com.feifan.mybatis.model;
+package com.feifan.model;
 
 /**
  * Created by tongfeifan on 16/4/5.
@@ -9,9 +9,18 @@ public class User {
     private String username;
     private String password;
     private String  phoneNumber;
+    private boolean isActive;
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     public void setPhoneNumber(String phoneNumber) {

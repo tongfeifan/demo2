@@ -1,6 +1,6 @@
 package com.feifan.test;
 
-import com.feifan.mybatis.model.User;
+import com.feifan.model.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -19,7 +19,7 @@ public class Test {
 
     static {
         try {
-            reader = Resources.getResourceAsReader("config/Configuration.xml");
+            reader = Resources.getResourceAsReader("mybatis.xml");
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
         }catch (Exception e){
             e.printStackTrace();
