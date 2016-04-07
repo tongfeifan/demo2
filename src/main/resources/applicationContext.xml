@@ -8,7 +8,7 @@
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.feifan.controllers"/>
+    <context:component-scan base-package="com.feifan"/>
 
     <mvc:annotation-driven/>
 
@@ -21,8 +21,7 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation" value="classpath:config/Configuration.xml" />
-        <property name="mapperLocations" value="classpath*:com/feifan/mapper/*.xml" />
+        <property name="configLocation" value="classpath:mybatis.xml" />
     </bean>
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -36,6 +35,4 @@
         <property name="basePackage" value="com.feifan.mapper" />
     </bean>
 
-    <bean id="authentication" class="com.feifan.services.imple.AuthenticationImpl" />
-    <bean id="userOperation" class="com.feifan.services.imple.UserOperationImpl" />
 </beans>

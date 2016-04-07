@@ -1,9 +1,10 @@
 package com.feifan.controllers;
 
 import com.feifan.services.Authentication;
-import com.feifan.mybatis.model.User;
+import com.feifan.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,11 +28,13 @@ public class LoginController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String login(@ModelAttribute User user){
+    public String login(@ModelAttribute User user, Model model){
         if (authentication.login(user.getUsername(), user.getPassword())){
             return "redirect:/index";
         }
-        else
+        else {
+            model.addAttribute("error","用户名或密码错误");
             return "login";
+        }
     }
 }

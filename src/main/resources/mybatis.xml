@@ -4,7 +4,7 @@
 <configuration>
 
     <typeAliases>
-        <typeAlias type="com.feifan.mybatis.model.User" alias="User" />
+        <typeAlias type="com.feifan.model.User" alias="User" />
     </typeAliases>
 
 
@@ -21,6 +21,6 @@
     </environments>
 
     <mappers>
-        <package name="com.feifan.mapper" />
+        <mapper resource="mapper/User.xml" />
     </mappers>
 </configuration>
