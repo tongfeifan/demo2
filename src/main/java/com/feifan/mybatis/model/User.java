@@ -6,10 +6,17 @@ package com.feifan.mybatis.model;
 public class User {
 
     private int id;
-    private String userName;
+    private String username;
     private String password;
-    private String userAge;
-    private String userAddress;
+    private String  phoneNumber;
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
     public int getId() {
         return id;
@@ -26,23 +33,11 @@ public class User {
         this.password = password;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-    public String getUserAge() {
-        return userAge;
-    }
-    public void setUserAge(String userAge) {
-        this.userAge = userAge;
-    }
-    public String getUserAddress() {
-        return userAddress;
-    }
-    public void setUserAddress(String userAddress) {
-        this.userAddress = userAddress;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
 }
